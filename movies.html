@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"Aurora Film"</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/movie-logo.png">
+    <script
+      src="https://kit.fontawesome.com/aff5e32dc8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="landing">
+      <nav>
+        <div class="nav__container">
+          <a href="#">
+            <figure class="logo__img--wrapper" onclick="clearSearch()">
+              <img class="logo__img" src="./assets/movie-logo.png" />
+            </figure>
+          </a>
+          <ul class="nav__links">
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="#">Home</a>
+            </li>
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="#">Search</a>
+            </li>
+            <li class="nav__link">
+              <a class="nav__link--anchor nav__link--anchor-primary" href="#"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <header>
+        <div class="header__container">
+          <h1 class="header__title">Browse Movies</h1>
+          <div class="header__input--wrapper">
+            <input
+              class="header__input"
+              type="text"
+              placeholder="Search by title"
+              id="input"
+            />
+            <div class="header__input--btn" onclick="getSearchResult()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+    <main>
+      <section >
+        <div class="container">
+          <div class="row">
+            <div class="movie__header">
+              <h2 class="movie__header--title">
+                <span id="user__search"></span>
+              </h2>
+              <select id="filter" onchange="filterMovies(event)">
+                <option value="" disabled selected>SORT</option>
+                <option value="NEW_TO_OLD">Release, new > old</option>
+                <option value="OLD_TO_NEW">Release, old > new</option>
+              </select>
+            </div>
+            <div class="movies">
+
+            </div>
+            <div class="movies__not-found">
+              <figure class="not-found__img--wrapper">
+                <img
+                  class="not-found__img"
+                  src="./assets/undraw_not_found_re_qvvo.svg"
+                  alt=""
+                />
+              </figure>
+              <h2 class="not-found__title">
+                Could not find any matches related to your search.
+              </h2>
+              <p class="not-found__para">Please try again or reset below.</p>
+              <button class="not-found__btn" onclick="clearSearch()"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="movies.js"></script>
+  </body>
+</html>

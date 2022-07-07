@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+.container {
+    padding: 40px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO */
+
+.logo__img--wrapper {
+    width: 100px;
+}
+
+.logo__img {
+    width: 100%;
+    filter: invert(1);
+}
+
+
+/* LANDING */
+
+#landing {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.32)), url(./assets/header-bg5.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 356px;
+}
+
+
+/* NAV */
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 16px 24px 0 24px;
+    margin: 0 auto;
+}
+
+.nav__link--anchor {
+    font-size: 20px;
+    margin: 0 24px;
+    color: #FFF;
+}
+
+.nav__link--anchor-primary {
+    background-color: #fff;
+    color: #ff1e4a;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HEADER */
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.header__input--wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.header__input {
+    color: rgba(0, 0, 0, .87);
+    width: 100%;
+    max-width: 800px;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.header__input--btn {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    padding: 0 20px 0 8px;
+    color: #ff1e4a;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    transition: color 300ms ease;
+}
+
+.header__input--btn:hover {
+    color: #c20000;
+}
+
+.header__title {
+    font-size: 48px;
+    color: #FFF;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+}
+
+
+/* MOVIE-SECTION */
+
+.movie__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin-bottom: 32px;
+}
+
+.movie__header--title {
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.sort__container {
+    display: flex;
+    align-items: center;
+}
+
+select {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #242424;
+    font-size: 16px;
+    height: 50px;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 250px;
+    display: none;
+}
+
+/* MOVIES */
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: calc(100% / 3);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie__img {
+    transition: all 300ms ease;
+    cursor: not-allowed;
+    max-height: 300px;
+}
+
+.movie__img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+}
+
+.movie:hover .movie__img {
+    transform: scale(1.03);
+}
+
+.movie__title {
+    font-size: 20px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.movie__year {
+    font-weight: 700;
+    text-align: center;
+    color: #ff1e4a;
+}
+
+.movies__not-found {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.not-found__img--wrapper {
+    width: 600px;
+    margin-bottom: 16px;
+}
+
+.not-found__img {
+    width: 100%;
+}
+
+.not-found__title {
+    font-size: 28px;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.not-found__para {
+    color: #8b8b8b;
+    margin-bottom: 16px;
+}
+
+.not-found__btn {
+    border: none;
+    background-color: #ff1e4a;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    transition: all 800ms;
+}
+
+.not-found__btn:hover {
+    background-color: #c20000;
+    transform: rotate(360deg);
+    cursor: pointer;
+}
