@@ -3,8 +3,9 @@ const searchInput = document.getElementById("input");
 const userSearch = document.getElementById("user__search");
 const notFound = document.querySelector(".movies__not-found");
 const filterSelect = document.getElementById("filter");
+const moviesLoading = document.getElementById("movies-loading");
 
-let results;
+let results = null
 
 /* Used to clear after faulty search/page refresh */
 function clearSearch() {
@@ -13,15 +14,19 @@ function clearSearch() {
   movieWrapper.replaceChildren();
   notFound.style.display = "none";
   filterSelect.style.display = "none";
+  moviesLoading.classList.remove("building-blocks");
 }
 
+/* Getting value from user input and posting it to getResult function */
 function getSearchResult() {
+  moviesLoading.classList.add("building-blocks");
   const title = searchInput.value;
-  getResult(title);
+  movieWrapper.replaceChildren();
+  getResult(title)
   //  HTML CHANGES
   userSearch.innerHTML = `Search results: ${title}`;
-  filterSelect.style.display = "block";
   filterSelect.value = "";
+  notFound.style.display = "none";
 }
 
 async function getResult(title) {
@@ -34,24 +39,27 @@ async function getResult(title) {
     notFound.style.display = "flex";
     filterSelect.style.display = "none";
     movieWrapper.replaceChildren();
+    moviesLoading.classList.remove("building-blocks");
   } else {
-    results = moviesData.Search.slice(0, 6);
-    renderMovies()
+    results = moviesData.Search.slice(0,6);
+    setTimeout(renderMovies, 2500)
   }
 }
 
 function filterMovies(event) {
-    renderMovies(event.target.value);
-  }
+  renderMovies(event.target.value);
+}
 
 function renderMovies(filter) {
+  moviesLoading.classList.remove("building-blocks");
+  filterSelect.style.display = "block";
   if (filter === "OLD_TO_NEW") {
     results.sort((a, b) => a.Year - b.Year);
   } else if (filter === "NEW_TO_OLD") {
     results.sort((a, b) => b.Year - a.Year);
   }
   movieWrapper.innerHTML = results
-  .map((movie) => {
+    .map((movie) => {
       return `<div class="movie">
                 <figure class="movie__img--wrapper">
                 <img
@@ -64,6 +72,5 @@ function renderMovies(filter) {
                 <div class="movie__year">${movie.Year}</div>
             </div>`;
     })
-    .join("");
-
+    .join("")
 }
