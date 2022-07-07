@@ -20,6 +20,7 @@ function clearSearch() {
 /* Getting value from user input and posting it to getResult function */
 function getSearchResult() {
   moviesLoading.classList.add("building-blocks");
+  filterSelect.style.display = "none";
   const title = searchInput.value;
   movieWrapper.replaceChildren();
   getResult(title)
@@ -42,7 +43,7 @@ async function getResult(title) {
     moviesLoading.classList.remove("building-blocks");
   } else {
     results = moviesData.Search.slice(0,6);
-    setTimeout(renderMovies, 2500)
+    setTimeout(renderMovies, 2000)
   }
 }
 
