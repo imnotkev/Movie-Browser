@@ -45,7 +45,7 @@ async function getResult(title) {
   if (moviesData.Response === "False") {
     setTimeout(noResults, 2000)
   } else {
-    results = moviesData.Search.slice(0,6);
+    results = moviesData.Search.slice(0,8);
     setTimeout(renderMovies, 2000)
   }
 }

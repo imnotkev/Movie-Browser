@@ -553,7 +553,7 @@ select:hover {
     animation-delay: 1.05s;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
     .movie {
         width: calc(100% / 3);
     }
