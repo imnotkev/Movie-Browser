@@ -635,7 +635,7 @@ select:hover {
 }
 
 @media (max-width: 550px) {
-    
+
     #landing {
         height: 220px;
     }
@@ -657,7 +657,7 @@ select:hover {
         display: block;
     }
 
-    .container{
+    .container {
         padding: 20px 0;
     }
 
@@ -669,7 +669,7 @@ select:hover {
         font-size: 32px;
         margin-bottom: 12px;
     }
-    
+
     .header__input--wrapper {
         max-width: 250px;
     }
@@ -696,8 +696,12 @@ select:hover {
     }
 
     .movie {
-        width: 100%;
         padding: 24px 16px;
+    }
+
+    .movie__img {
+        height: 200px;
+        max-width: 140px;
     }
 
     .movie__title {
