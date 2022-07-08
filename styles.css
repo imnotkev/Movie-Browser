@@ -706,6 +706,7 @@ select:hover {
 
     .movie__title {
         font-size: 16px;
+        max-width: 150px;
     }
 
     .building-blocks {
