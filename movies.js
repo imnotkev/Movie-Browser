@@ -7,6 +7,12 @@ const moviesLoading = document.getElementById("movies-loading");
 
 let results = null
 
+searchInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    getSearchResult()
+  }
+});
+
 /* Used to clear after faulty search/page refresh */
 function clearSearch() {
   searchInput.value = "";
