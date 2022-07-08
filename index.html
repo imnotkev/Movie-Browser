@@ -16,7 +16,7 @@
     <section id="landing">
       <nav>
         <div class="nav__container">
-          <a class="logo" href="./movies.html">
+          <a class="logo" href="./index.html">
             <figure class="logo__img--wrapper">
               <img class="logo__img" src="./assets/movie-logo.png" />
             </figure>
@@ -34,6 +34,26 @@
               >
             </li>
           </ul>
+          <!-- mobile menu-->
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+        <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <ul class="menu__links">
+                <li class="menu__list">
+                    <a href="#" class="menu__link not__allowed" onclick="closeMenu()">Home</a>
+                </li>
+                <li class="menu__list">
+                    <a href="#" class="menu__link not__allowed" onclick="closeMenu()">Search</a>
+                </li>
+                <li class="menu__list">
+                    <a href="#" class="menu__link menu__link--primary" onclick="closeMenu()">Contact</a>
+                </li>
+            </ul>
+        </div>
         </div>
       </nav>
       <header>

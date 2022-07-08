@@ -37,14 +37,18 @@ async function getResult(title) {
   const moviesData = await movies.json();
 
   if (moviesData.Response === "False") {
-    notFound.style.display = "flex";
-    filterSelect.style.display = "none";
-    movieWrapper.replaceChildren();
-    moviesLoading.classList.remove("building-blocks");
+    setTimeout(noResults, 2000)
   } else {
     results = moviesData.Search.slice(0,6);
     setTimeout(renderMovies, 2000)
   }
+}
+
+function noResults(){
+  notFound.style.display = "flex";
+  filterSelect.style.display = "none";
+  movieWrapper.replaceChildren();
+  moviesLoading.classList.remove("building-blocks");
 }
 
 function filterMovies(event) {
@@ -74,4 +78,14 @@ function renderMovies(filter) {
             </div>`;
     })
     .join("")
+}
+
+
+/* MOBILE MENU */
+function openMenu() {
+  document.body.classList += " menu--open"
+}
+
+function closeMenu() {
+  document.body.classList.remove('menu--open')
 }
