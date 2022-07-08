@@ -140,9 +140,10 @@ input:focus {
 
 .menu__backdrop {
     position: fixed;
-    background: rgba(0, 0, 0, 0.288);
+    background: rgba(0, 0, 0, 0.24);
     box-shadow: 0 8px 32px 0 rgba(78, 80, 99, 0.37);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     margin: 16px;
