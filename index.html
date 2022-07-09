@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>"Aurora Film"</title>
+    <title>"Aurora Film" | Mockup</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="./assets/movie-logo.png" />
     <script
@@ -26,7 +26,7 @@
               <a class="nav__link--anchor" href="#">Home</a>
             </li>
             <li class="nav__link">
-              <a class="nav__link--anchor" href="#">Search</a>
+              <a class="nav__link--anchor" onclick="openSearch()">Search</a>
             </li>
             <li class="nav__link">
               <a class="nav__link--anchor nav__link--anchor-primary" href="#"
@@ -37,23 +37,38 @@
           <!-- mobile menu-->
           <button class="btn__menu" onclick="openMenu()">
             <i class="fa-solid fa-ellipsis-vertical"></i>
-        </button>
-        <div class="menu__backdrop">
+          </button>
+          <div class="menu__backdrop">
             <button class="btn__menu btn__menu--close" onclick="closeMenu()">
               <i class="fa-solid fa-caret-down"></i>
             </button>
             <ul class="menu__links">
-                <li class="menu__list">
-                    <a href="#" class="menu__link not__allowed" onclick="closeMenu()">Home</a>
-                </li>
-                <li class="menu__list">
-                    <a href="#" class="menu__link not__allowed" onclick="closeMenu()">Search</a>
-                </li>
-                <li class="menu__list">
-                    <a href="#" class="menu__link menu__link--primary" onclick="closeMenu()">Contact</a>
-                </li>
+              <li class="menu__list">
+                <a
+                  href="#"
+                  class="menu__link not__allowed"
+                  onclick="closeMenu()"
+                  >Home</a
+                >
+              </li>
+              <li class="menu__list">
+                <a
+                  href="#"
+                  class="menu__link not__allowed"
+                  onclick="closeMenu(), openSearch()"
+                  >Search</a
+                >
+              </li>
+              <li class="menu__list">
+                <a
+                  href="#"
+                  class="menu__link menu__link--primary"
+                  onclick="closeMenu()"
+                  >Contact</a
+                >
+              </li>
             </ul>
-        </div>
+          </div>
         </div>
       </nav>
       <header>
@@ -75,6 +90,83 @@
     </section>
     <main>
       <section id="movies">
+        <div class="welcome__screen">
+          <div class="feature__container mySlides fade" id="feature-1">
+            <div class="feature">
+              <figure class="feature__img--wrapper">
+                <img
+                  src="./assets/feature-movie-poster-1.jpg"
+                  class="feature__img"
+                />
+              </figure>
+              <div class="feature__desc">
+                <h2 class="feature__desc--title">
+                  Jurassic World Dominion <i>(2022)</i>
+                </h2>
+                <p class="feature__desc--para">
+                  Four years after Isla Nublar was destroyed, dinosaurs now
+                  live—and hunt—alongside humans all over the world. This
+                  fragile balance will reshape the future and determine, once
+                  and for all, whether human beings are to remain the apex
+                  predators on a planet they now share with history’s most
+                  fearsome creatures.
+                </p>
+                <div class="feature__desc--btn">
+                  <button class="btn not-implemented">Watch Trailer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature__container mySlides fade" id="feature-2">
+            <div class="feature">
+              <figure class="feature__img--wrapper">
+                <img
+                  src="./assets/feature-movie-poster-2.jpg"
+                  class="feature__img"
+                />
+              </figure>
+              <div class="feature__desc">
+                <h2 class="feature__desc--title">
+                  Spider-Man: No Way Home <i>(2021)</i>
+                </h2>
+                <p class="feature__desc--para">
+                  Peter Parker is unmasked and no longer able to separate his
+                  normal life from the high-stakes of being a super-hero. When
+                  he asks for help from Doctor Strange the stakes become even
+                  more dangerous, forcing him to discover what it truly means to
+                  be Spider-Man.
+                </p>
+                <div class="feature__desc--btn">
+                  <button class="btn not-implemented">Watch Trailer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature__container mySlides fade" id="feature-3">
+            <div class="feature">
+              <figure class="feature__img--wrapper">
+                <img
+                  src="./assets/feature-movie-poster-3.jpg"
+                  class="feature__img"
+                />
+              </figure>
+              <div class="feature__desc">
+                <h2 class="feature__desc--title">
+                  Minions: The Rise of Gru <i>(2022)</i>
+                </h2>
+                <p class="feature__desc--para">
+                  A fanboy of a supervillain supergroup known as the Vicious 6,
+                  Gru hatches a plan to become evil enough to join them, with
+                  the backup of his followers, the Minions.
+                </p>
+                <div class="feature__desc--btn">
+                  <button class="btn not-implemented">Watch Trailer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="container">
           <div class="row">
             <div class="movie__header">
@@ -117,6 +209,35 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="row">
+        <div class="footer__container">
+          <div class="footer__links">
+            <a class="nav__link--anchor footer__link--anchor not-implemented"
+              >CONTACT</a
+            >
+            <a class="nav__link--anchor footer__link--anchor not-implemented"
+              >TERMS</a
+            >
+          </div>
+          <a class="footer__logo logo" href="./index.html">
+            <figure class="logo__img--wrapper">
+              <img class="logo__img" src="./assets/movie-logo.png" />
+            </figure>
+          </a>
+          <div class="footer__links">
+            <a class="nav__link--anchor footer__link--anchor not-implemented"
+              >PRIVACY</a
+            >
+            <a
+              class="nav__link--anchor footer__link--anchor"
+              onclick="openSearch()"
+              >SEARCH</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="movies.js"></script>
   </body>
 </html>

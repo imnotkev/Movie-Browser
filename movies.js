@@ -2,6 +2,8 @@ const movieWrapper = document.querySelector(".movies");
 const searchInput = document.getElementById("input");
 const userSearch = document.getElementById("user__search");
 const notFound = document.querySelector(".movies__not-found");
+const welcomeScreen = document.querySelector(".welcome__screen");
+const mainContent = document.querySelector(".container");
 const filterSelect = document.getElementById("filter");
 const moviesLoading = document.getElementById("movies-loading");
 
@@ -13,6 +15,11 @@ searchInput.addEventListener('keypress', function (e) {
   }
 });
 
+function openSearch() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  searchInput.focus();
+}
+
 /* Used to clear after faulty search/page refresh */
 function clearSearch() {
   searchInput.value = "";
@@ -20,12 +27,16 @@ function clearSearch() {
   movieWrapper.replaceChildren();
   notFound.style.display = "none";
   filterSelect.style.display = "none";
+  mainContent.style.display = "none";
+  welcomeScreen.style.display = "flex";
   moviesLoading.classList.remove("building-blocks");
 }
 
 /* Getting value from user input and posting it to getResult function */
 function getSearchResult() {
+  mainContent.style.display = "block"
   moviesLoading.classList.add("building-blocks");
+  welcomeScreen.style.display = "none";
   filterSelect.style.display = "none";
   const title = searchInput.value;
   movieWrapper.replaceChildren();
@@ -43,10 +54,10 @@ async function getResult(title) {
   const moviesData = await movies.json();
 
   if (moviesData.Response === "False") {
-    setTimeout(noResults, 2000)
+    setTimeout(noResults, 2600)
   } else {
     results = moviesData.Search.slice(0,8);
-    setTimeout(renderMovies, 2000)
+    setTimeout(renderMovies, 2600)
   }
 }
 
@@ -94,4 +105,21 @@ function openMenu() {
 
 function closeMenu() {
   document.body.classList.remove('menu--open')
+}
+
+/* WELCOME SCREEN - SLIDESHOW */
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "flex";  
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
