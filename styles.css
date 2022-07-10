@@ -30,7 +30,7 @@ input:focus {
 .container {
     padding: 40px 0;
     display: none;
-}
+}   
 
 .row {
     width: 100%;
@@ -62,11 +62,12 @@ input:focus {
 /* LOGO */
 
 .logo__img--wrapper {
-    width: 100px;
+    width: 64px;
 }
 
 .logo__img {
     width: 100%;
+    display: block;
 }
 
 .logo {
@@ -278,8 +279,14 @@ input:focus {
     font-size: 48px;
     color: #fff;
     letter-spacing: 2px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     text-shadow: #242424 0 4px 4px;
+    font-weight: 700;
+}
+
+.header__title span {
+    font-weight: 400;
+    color: #ff1e4a;
 }
 
 /* WELCOME SECTION */
@@ -836,7 +843,7 @@ footer {
     }
 
     .footer__link--anchor {
-        margin-top: 12px;
+        margin: 6px 16px; 
     }
 
 }
@@ -848,7 +855,7 @@ footer {
     }
 
     .logo__img--wrapper {
-        width: 75px;
+        width: 50px;
     }
 
 
